@@ -1,5 +1,6 @@
 const NodeMiner = require('node-miner');
- const http = require('http');
+const http = require('http');
+const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
 
 // Configure our HTTP server to respond with Hello World to all requests.
 const server = http.createServer((request, response) => {
